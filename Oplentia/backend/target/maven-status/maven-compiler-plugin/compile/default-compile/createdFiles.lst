@@ -1,0 +1,8 @@
+com\oplentia\oplentia\controller\LeaderboardController.class
+com\oplentia\oplentia\controller\AnalyzeController.class
+com\oplentia\oplentia\controller\TestController.class
+com\oplentia\oplentia\controller\GlobalExceptionHandler$ErrorResponse.class
+com\oplentia\oplentia\controller\GlobalExceptionHandler.class
+com\oplentia\oplentia\OplentiaApplication.class
+com\oplentia\oplentia\model\Startup.class
+com\oplentia\oplentia\repository\StartupRepository.class
