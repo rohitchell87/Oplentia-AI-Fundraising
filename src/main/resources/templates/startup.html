@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout">
+<head>
+    <title>Startup Idea</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <section class="py-5">
+            <div class="container">
+                <h1 th:text="'Startup ' + ${startupId}">Startup Idea</h1>
+                <p>Details of the startup...</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

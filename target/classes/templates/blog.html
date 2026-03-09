@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout">
+<head>
+    <title>Blog</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <section class="py-5">
+            <div class="container">
+                <h1 class="text-center mb-4">Blog</h1>
+                <p class="text-center">Latest posts on entrepreneurship and funding.</p>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Post 1</h5>
+                                <p class="card-text">Summary...</p>
+                                <a href="/blog/post-1" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
