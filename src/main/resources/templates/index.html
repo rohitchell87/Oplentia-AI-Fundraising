@@ -6,119 +6,104 @@
 <body>
     <div th:fragment="content">
         <!-- Hero Section -->
-        <section class="bg-primary text-white py-5">
-            <div class="container text-center">
-                <h1 class="display-4">Connect Ideas to Funding</h1>
-                <p class="lead">Oplentia bridges the gap between innovative startup ideas and investors through AI-powered discovery.</p>
-                <a href="#" class="btn btn-light btn-lg me-2">Submit Your Idea</a>
-                <a href="#" class="btn btn-outline-light btn-lg">Explore Startups</a>
+        <section class="hero-section text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold mb-4">Connect Ideas to Funding</h1>
+                <p class="lead mb-5">Oplentia bridges the gap between innovative startup ideas and investors through AI-powered discovery.</p>
+                <a href="/submit" class="btn btn-light btn-lg me-3 px-4 py-3">Submit Your Idea</a>
+                <a href="/discover" class="btn btn-outline-light btn-lg px-4 py-3">Explore Startups</a>
             </div>
         </section>
+
+        <!-- Message Alert -->
+        <div th:if="${message}" class="container mt-3">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span th:text="${message}"></span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </div>
 
         <!-- Features Section -->
-        <section class="py-5">
+        <section class="py-5 section-bg-light">
             <div class="container">
-                <h2 class="text-center mb-4">Core Features</h2>
-                <div class="row">
-                    <div class="col-md-4 text-center mb-4">
-                        <div class="h1 mb-3">🤖</div>
-                        <h4>AI-Driven Evaluation</h4>
-                        <p>Our AI analyzes ideas based on traction and potential.</p>
+                <h2 class="text-center mb-5 fw-bold">Core Features</h2>
+                <div class="row g-4">
+                    <div class="col-md-4 text-center">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-robot icon-large"></i>
+                                <h4 class="card-title fw-bold">AI-Driven Evaluation</h4>
+                                <p class="card-text">Our advanced AI analyzes startup ideas based on traction, engagement, and revenue potential.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 text-center mb-4">
-                        <div class="h1 mb-3">🤝</div>
-                        <h4>Stakeholder Matching</h4>
-                        <p>Connect with the right investors and partners.</p>
+                    <div class="col-md-4 text-center">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-handshake icon-large"></i>
+                                <h4 class="card-title fw-bold">Stakeholder Matching</h4>
+                                <p class="card-text">Connect with the right investors, partners, or collaborators who are interested in your industry and stage.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 text-center mb-4">
-                        <div class="h1 mb-3">💰</div>
-                        <h4>Micro-Investment</h4>
-                        <p>Entry fees fund promising new ideas.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works -->
-        <section class="bg-light py-5">
-            <div class="container">
-                <h2 class="text-center mb-4">How It Works</h2>
-                <div class="row">
-                    <div class="col-md-3 text-center mb-4">
-                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">1</div>
-                        <h5>Submit Idea</h5>
-                        <p>Present your startup idea.</p>
-                    </div>
-                    <div class="col-md-3 text-center mb-4">
-                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">2</div>
-                        <h5>AI Evaluation</h5>
-                        <p>Get evaluated by AI.</p>
-                    </div>
-                    <div class="col-md-3 text-center mb-4">
-                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">3</div>
-                        <h5>Discovery</h5>
-                        <p>Investors find your idea.</p>
-                    </div>
-                    <div class="col-md-3 text-center mb-4">
-                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">4</div>
-                        <h5>Connect & Fund</h5>
-                        <p>Get funded and grow.</p>
+                    <div class="col-md-4 text-center">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-coins icon-large"></i>
+                                <h4 class="card-title fw-bold">Micro-Investment Ecosystem</h4>
+                                <p class="card-text">Entry fees from successful startups fund promising new ideas, creating a self-sustaining ecosystem.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Stats -->
-        <section class="bg-primary text-white py-5">
+        <section class="stats-section py-5 text-white">
             <div class="container text-center">
-                <div class="row">
-                    <div class="col-md-3 mb-4">
-                        <h3>500+</h3>
-                        <p>Ideas Submitted</p>
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <h3 class="display-4 fw-bold" th:text="${ideasCount} + ' '">0 </h3>
+                        <p class="h5">Ideas Submitted</p>
                     </div>
-                    <div class="col-md-3 mb-4">
-                        <h3>200+</h3>
-                        <p>Investors Onboarded</p>
+                    <div class="col-md-3">
+                        <h3 class="display-4 fw-bold" th:text="${investorsCount} + '+'">0+</h3>
+                        <p class="h5">Investors Onboarded</p>
                     </div>
-                    <div class="col-md-3 mb-4">
-                        <h3>50+</h3>
-                        <p>Startups Funded</p>
+                    <div class="col-md-3">
+                        <h3 class="display-4 fw-bold" th:text="${fundedCount} + '+'">0+</h3>
+                        <p class="h5">Startups Funded</p>
                     </div>
-                    <div class="col-md-3 mb-4">
-                        <h3>$2M+</h3>
-                        <p>Funds Distributed</p>
+                    <div class="col-md-3">
+                        <h3 class="display-4 fw-bold" th:text="'$' + ${fundsAmount} + 'M+'">$0M+</h3>
+                        <p class="h5">Funds Distributed</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Testimonials -->
-        <section class="py-5">
+        <section class="py-5 section-bg-light">
             <div class="container">
-                <h2 class="text-center mb-4">What Our Users Say</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">"Oplentia helped me connect with investors."</p>
-                                <cite>- Alex Johnson</cite>
-                            </div>
+                <h2 class="text-center mb-5 fw-bold">What Our Users Say</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <p class="mb-3">"Oplentia helped me connect with the perfect investor for my AI startup. The AI evaluation gave my idea the visibility it needed."</p>
+                            <cite class="fw-bold">- Alex Johnson, Founder, TechInnovate</cite>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">"Great platform for discovering startups."</p>
-                                <cite>- Sarah Lee</cite>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <p class="mb-3">"As an investor, I love how Oplentia ranks ideas based on real metrics. It's made discovering promising startups so much easier."</p>
+                            <cite class="fw-bold">- Sarah Lee, Angel Investor</cite>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">"Innovative micro-investment model."</p>
-                                <cite>- Mike Chen</cite>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <p class="mb-3">"The platform's micro-investment model is brilliant. It creates a sustainable ecosystem for innovation."</p>
+                            <cite class="fw-bold">- Mike Chen, Startup Mentor</cite>
                         </div>
                     </div>
                 </div>
@@ -126,48 +111,63 @@
         </section>
 
         <!-- CTA -->
-        <section class="bg-secondary text-white py-5">
-            <div class="container text-center">
-                <h2>Ready to Get Started?</h2>
-                <p>Join Oplentia today.</p>
-                <a href="#" class="btn btn-light btn-lg me-2">Sign Up as Founder</a>
-                <a href="#" class="btn btn-outline-light btn-lg">Join as Investor</a>
-            </div>
-        </section>
-
-        <!-- FAQ -->
         <section class="py-5">
             <div class="container">
-                <h2 class="text-center mb-4">FAQ</h2>
+                <h2 class="text-center mb-5 fw-bold">Frequently Asked Questions</h2>
                 <div class="accordion" id="faqAccordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
                                 How does Oplentia work?
                             </button>
                         </h2>
                         <div id="faq1" class="accordion-collapse collapse show">
                             <div class="accordion-body">
-                                Entrepreneurs submit ideas, AI evaluates them, stakeholders discover and connect.
+                                Oplentia is a platform where entrepreneurs can showcase their startup ideas and connect with investors and collaborators. Our system helps evaluate ideas based on their potential, visibility, and engagement. Investors and stakeholders can explore promising startups and directly connect with founders for collaboration, mentorship, or funding opportunities.
                             </div>
                         </div>
                     </div>
-                    <!-- Add more FAQ items -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Who can join Oplentia?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                Oplentia is open to student founders, early-stage entrepreneurs, innovators, and investors who are looking to discover or support promising startup ideas. Whether you have a new idea or want to invest in emerging ventures, Oplentia provides a platform to connect and grow together.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                What is the monetization model?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                Oplentia follows a growth-driven model. Entrepreneurs can submit and showcase their ideas freely. Once a startup gains traction and connects with investors or stakeholders through the platform, Oplentia charges a small success-based platform fee. This helps us sustain the platform and continue supporting new innovative ideas.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Newsletter -->
-        <section class="bg-light py-5">
+        <section class="py-5 section-bg-light">
             <div class="container text-center">
-                <h2>Stay Updated</h2>
-                <p>Subscribe to our newsletter.</p>
-                <div class="row justify-content-center">
+                <h2 class="display-5 fw-bold mb-4">Stay Updated</h2>
+                <p class="lead mb-5">Subscribe to our newsletter for the latest startup opportunities and platform updates.</p>
+                <form action="/newsletter" method="post" class="row justify-content-center g-3">
                     <div class="col-md-6">
-                        <input type="email" class="form-control mb-2" placeholder="Enter your email">
-                        <button class="btn btn-primary">Subscribe</button>
+                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email" required>
                     </div>
-                </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Subscribe</button>
+                    </div>
+                </form>
             </div>
         </section>
     </div>

@@ -1,2 +1,8 @@
-com/oplentia/oplentia/OplentiaApplication.class
-com/oplentia/oplentia/HomeController.class
+com/oplentia/User.class
+com/oplentia/HomeController.class
+com/oplentia/Idea.class
+com/oplentia/UserRepository.class
+com/oplentia/LeaderboardWebSocketHandler.class
+com/oplentia/OplentiaApplication.class
+com/oplentia/IdeaRepository.class
+com/oplentia/WebSocketConfig.class

@@ -7,8 +7,19 @@
     <div th:fragment="content">
         <section class="py-5">
             <div class="container">
-                <h1 th:text="'Startup ' + ${startupId}">Startup Idea</h1>
-                <p>Details of the startup...</p>
+                <h1 th:text="${idea.title}">Startup Idea</h1>
+                <p class="lead" th:text="${idea.description}">Description...</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Founder</h4>
+                        <p th:text="${idea.founderName}">Founder Name</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Contact</h4>
+                        <p th:text="${idea.email}">Email</p>
+                    </div>
+                </div>
+                <a href="/discover" class="btn btn-secondary">Back to Discover</a>
             </div>
         </section>
     </div>

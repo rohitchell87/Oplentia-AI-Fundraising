@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout">
+<head>
+    <title>My Startup</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <section class="py-5">
+            <div class="container">
+                <h1 class="text-center mb-4">My Startup Ideas</h1>
+                <div th:if="${ideas != null and !ideas.isEmpty()}">
+                    <div class="row">
+                        <div class="col-md-4 mb-4" th:each="idea : ${ideas}">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${idea.title}">Startup Title</h5>
+                                    <p class="card-text" th:text="${idea.description}">Description...</p>
+                                    <p><strong>AI Score:</strong> <span th:text="${#numbers.formatDecimal(idea.aiScore, 1, 2)}">0.0</span></p>
+                                    <a th:href="@{/startup/{id}(id=${idea.id})}" class="btn btn-primary">View Details</a>
+                                    <a href="/edit-idea" class="btn btn-secondary">Edit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${ideas == null or ideas.isEmpty()}" class="text-center">
+                    <p>You haven't submitted any ideas yet. <a href="/submit">Submit one now</a>!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

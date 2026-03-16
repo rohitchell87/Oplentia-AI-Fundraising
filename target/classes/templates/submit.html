@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout">
+<head>
+    <title>Submit Your Idea</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <section class="py-5">
+            <div class="container">
+                <h1 class="text-center mb-4">Submit Your Startup Idea</h1>
+                <p class="text-center mb-5">Share your innovative idea with our community. Our AI will evaluate it and help connect you with potential investors.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form action="/submit" method="post" class="card p-4">
+                            <div class="mb-3">
+                                <label for="title" class="form-label fw-bold">Idea Title</label>
+                                <input type="text" class="form-control" id="title" name="title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label fw-bold">Description</label>
+                                <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="founderName" class="form-label fw-bold">Your Name</label>
+                                <input type="text" class="form-control" id="founderName" name="founderName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-bold">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Submit Idea</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

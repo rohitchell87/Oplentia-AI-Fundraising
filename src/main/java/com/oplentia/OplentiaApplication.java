@@ -1,4 +1,4 @@
-package com.oplentia.oplentia;
+package com.oplentia;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
